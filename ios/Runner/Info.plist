@@ -66,5 +66,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Kinetic uses speech recognition to provide you with dynamic voice coaching during your workouts.</string>
 </dict>
 </plist>
