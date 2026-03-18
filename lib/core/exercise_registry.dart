@@ -1,8 +1,11 @@
 import '../models/workout_step.dart';
 
+/// The single source of truth for all available exercises.
+/// All 21 Lottie animations are registered here.
 class ExerciseRegistry {
   static final List<WorkoutStep> exercises = [
-    // WARMUPS
+
+    // ─── WARMUP ────────────────────────────────────────────────────────────
     const WorkoutStep(
       id: 'jumping_jacks',
       type: StepType.exercise,
@@ -10,7 +13,7 @@ class ExerciseRegistry {
       category: 'warmup',
       durationSeconds: 30,
       animationPath: 'assets/animations/jumping_jack.json',
-      coachTip: 'Land soft on your feet like you\'re avoiding a memory leak.',
+      coachTip: 'Land soft on your feet. Quiet landings = less joint stress.',
     ),
     const WorkoutStep(
       id: 'inchworm',
@@ -19,10 +22,19 @@ class ExerciseRegistry {
       category: 'warmup',
       durationSeconds: 30,
       animationPath: 'assets/animations/inchworm.json',
-      coachTip: 'Walk your hands out slowly. Think of it as a rolling deployment.',
+      coachTip: 'Walk your hands out slowly. Engage your core the whole way.',
     ),
-    
-    // HIIT / STRENGTH
+    const WorkoutStep(
+      id: 'high_knees',
+      type: StepType.exercise,
+      name: 'High Knees',
+      category: 'warmup',
+      durationSeconds: 30,
+      animationPath: 'assets/animations/fitness_girl.json',
+      coachTip: 'Drive those knees up to hip height. Pump your arms to match.',
+    ),
+
+    // ─── HIIT / STRENGTH ───────────────────────────────────────────────────
     const WorkoutStep(
       id: 'push_ups',
       type: StepType.exercise,
@@ -30,7 +42,7 @@ class ExerciseRegistry {
       category: 'hiit',
       durationSeconds: 45,
       animationPath: 'assets/animations/pushup.json',
-      coachTip: 'Keep your back straight. No spaghetti code posture here.',
+      coachTip: 'Keep your back flat. No spaghetti code posture.',
     ),
     const WorkoutStep(
       id: 'burpees',
@@ -39,7 +51,7 @@ class ExerciseRegistry {
       category: 'hiit',
       durationSeconds: 45,
       animationPath: 'assets/animations/burpee.json',
-      coachTip: 'Explode up! Optimize for maximum power output.',
+      coachTip: 'Explode up! Chest to floor, then power through.',
     ),
     const WorkoutStep(
       id: 'lunges',
@@ -48,7 +60,7 @@ class ExerciseRegistry {
       category: 'hiit',
       durationSeconds: 45,
       animationPath: 'assets/animations/lunges.json',
-      coachTip: 'Balance is key. Keep your state synchronized.',
+      coachTip: 'Front knee stays over your ankle. Don\'t let it collapse inward.',
     ),
     const WorkoutStep(
       id: 'spider_pushups',
@@ -57,7 +69,7 @@ class ExerciseRegistry {
       category: 'hiit',
       durationSeconds: 45,
       animationPath: 'assets/animations/spiderman_pushup.json',
-      coachTip: 'Knees to elbows. Crawl through the bugs.',
+      coachTip: 'Bring the knee to meet the elbow each rep. Control the movement.',
     ),
     const WorkoutStep(
       id: 'split_jumps',
@@ -66,10 +78,28 @@ class ExerciseRegistry {
       category: 'hiit',
       durationSeconds: 45,
       animationPath: 'assets/animations/split_jumps.json',
-      coachTip: 'Switch feet fast. Context switching at its best.',
+      coachTip: 'Switch feet fast. Land soft, like you\'re sneaking.',
     ),
-    
-    // CORE
+    const WorkoutStep(
+      id: 'squats',
+      type: StepType.exercise,
+      name: 'Squats',
+      category: 'hiit',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/squat.json',
+      coachTip: 'Sit into it. Knees out, chest up, heels planted.',
+    ),
+    const WorkoutStep(
+      id: 'pushup_toe_tap',
+      type: StepType.exercise,
+      name: 'Pushup Toe Tap',
+      category: 'hiit',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/pushup_toe_tap.json',
+      coachTip: 'From push-up position, tap each foot out. Keep hips level.',
+    ),
+
+    // ─── CORE ──────────────────────────────────────────────────────────────
     const WorkoutStep(
       id: 'plank',
       type: StepType.exercise,
@@ -77,7 +107,7 @@ class ExerciseRegistry {
       category: 'core',
       durationSeconds: 60,
       animationPath: 'assets/animations/plank.json',
-      coachTip: 'Hold steady. Your core is the root of your application.',
+      coachTip: 'Hold steady. Your core is your foundation — build it strong.',
     ),
     const WorkoutStep(
       id: 'side_plank',
@@ -86,7 +116,7 @@ class ExerciseRegistry {
       category: 'core',
       durationSeconds: 30,
       animationPath: 'assets/animations/side_plank.json',
-      coachTip: 'Switch sides halfway. Stay vertically scaled.',
+      coachTip: 'Switch sides halfway. Stack those feet perfectly.',
     ),
     const WorkoutStep(
       id: 'sit_ups',
@@ -95,7 +125,7 @@ class ExerciseRegistry {
       category: 'core',
       durationSeconds: 45,
       animationPath: 'assets/animations/sit_ups.json',
-      coachTip: 'Isolation is good for abs, bad for microservices.',
+      coachTip: 'Don\'t pull on your neck. Let your abs do the work.',
     ),
     const WorkoutStep(
       id: 'cobras',
@@ -104,19 +134,64 @@ class ExerciseRegistry {
       category: 'core',
       durationSeconds: 45,
       animationPath: 'assets/animations/cobras.json',
-      coachTip: 'Stretch that spine. Release the accumulated technical debt.',
+      coachTip: 'Lengthen your spine. Hold at the top for a full breath.',
     ),
     const WorkoutStep(
       id: 'leg_ups',
       type: StepType.exercise,
-      name: 'Leg Ups',
+      name: 'Leg Raises',
       category: 'core',
       durationSeconds: 45,
       animationPath: 'assets/animations/leg_ups.json',
-      coachTip: 'Don\'t let them touch the floor. Keep the stack clean.',
+      coachTip: 'Lower slowly. Don\'t let your lower back arch off the floor.',
     ),
-    
-    // REST / RECOVERY
+    const WorkoutStep(
+      id: 'bicycle_crunches',
+      type: StepType.exercise,
+      name: 'Bicycle Crunches',
+      category: 'core',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/bicycle_crunches.json',
+      coachTip: 'Slow and controlled beats fast and sloppy every time.',
+    ),
+    const WorkoutStep(
+      id: 'elbow_to_knee_crunch',
+      type: StepType.exercise,
+      name: 'Elbow to Knee Crunch',
+      category: 'core',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/elbow_to_knee_crunch.json',
+      coachTip: 'Rotate from the torso, not your neck. Feel the obliques engage.',
+    ),
+    const WorkoutStep(
+      id: 'leg_raises',
+      type: StepType.exercise,
+      name: 'Flutter Kicks',
+      category: 'core',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/leg_raises.json',
+      coachTip: 'Small kicks, never touching the floor. Breathe steady.',
+    ),
+    const WorkoutStep(
+      id: 'reverse_crunches',
+      type: StepType.exercise,
+      name: 'Reverse Crunches',
+      category: 'core',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/reverse_crunches.json',
+      coachTip: 'Curl your hips off the floor. Control the descent.',
+    ),
+    const WorkoutStep(
+      id: 't_plank',
+      type: StepType.exercise,
+      name: 'T-Plank Rotation',
+      category: 'core',
+      durationSeconds: 45,
+      animationPath: 'assets/animations/t_plank.json',
+      coachTip: 'Rotate fully at the top. Stack your feet or stagger them.',
+    ),
+
+    // ─── REST ──────────────────────────────────────────────────────────────
     const WorkoutStep(
       id: 'rest',
       type: StepType.rest,
@@ -124,7 +199,7 @@ class ExerciseRegistry {
       category: 'rest',
       durationSeconds: 15,
       animationPath: 'assets/animations/rest.json',
-      coachTip: 'Collecting garbage... Take a breath.',
+      coachTip: 'Reset your breathing. In through the nose, out through the mouth.',
     ),
   ];
 
