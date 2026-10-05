@@ -53,14 +53,14 @@ class WorkoutStep {
 
   factory WorkoutStep.fromJson(Map<String, dynamic> json) {
     return WorkoutStep(
-      id: json['id'] as String,
+      id: json['id'] as String? ?? '',
       type: StepType.values.firstWhere(
         (e) => e.name == json['type'],
         orElse: () => StepType.exercise,
       ),
-      name: json['name'] as String,
+      name: json['name'] as String? ?? '',
       category: json['category'] as String? ?? 'hiit',
-      durationSeconds: json['durationSeconds'] as int,
+      durationSeconds: json['durationSeconds'] as int? ?? 0,
       reps: json['reps'] as int? ?? 0,
       animationPath: json['animationPath'] as String? ?? '',
       startVoiceMessage: json['startVoiceMessage'] as String? ?? '',
@@ -71,6 +71,7 @@ class WorkoutStep {
 
   Map<String, dynamic> toJson() {
     return {
+      'id': id,
       'type': type.name,
       'name': name,
       'category': category,
